@@ -1,7 +1,9 @@
 <?php 
 
     //Do PHP Things like start COOKIES and connect to Database
-
+    
+    $settingType = $_GET['sType'];
+    
 ?>
 
 <!DOCTYPE HTML> 
@@ -19,32 +21,39 @@
     <div class='header'>
         <center>SENTINEL</center>
     </div>
-    
-    
-    <!-- MDesign Card for Config -->
     <center>
-        <!-- Card for Screen1 - HeartBeat Sensor
+    
+    <?php if ($settingType == 1 || !isset($settingType) ) { 
+    echo "
+    <!-- MDesign Card for Config -->
+    
+        <!-- Card for Screen1 - HeartBeat Sensor-->
         <div class='config card'>
             <h1>Settings</h1>
-            <h2>Heartbeat Sensor</h2>
+            <h2>Configure Heartbeat Sensor</h2>
             <hr>
             <center>
                 <div class='icoHolder'></div>
             </center>
-            <p>Connection to heartbeat sensor couldn’t be established. Make sure your car is equipped with a compatible heartbeat sensor and that your phone is connected using Bluetooth for AppLink™</p>
+            <p>Connection to heartbeat sensor couldn’t be established. Make sure your car is equipped with a compatible heartbeat sensor and your phone is connected using Bluetooth for AppLink™</p>
             <center>
                 <div class='button'>Retry</div>
-                <div class='button'>Skip</div>
+                <a href='/settings.php?sType=2'><div class='button'>Skip</div></a>
                 <br>
-                <div class='circlePtr selected'></div>
-                <div class='circlePtr'></div>
-                <div class='circlePtr'></div>
+                <a href='/settings.php'><div class='circlePtr selected'></div></a>
+                <a href='/settings.php?sType=2'><div class='circlePtr'></div></a>
                         
             </center>
         </div>
-        -->
+        ";
+    }
+    
+        else if ($settingType==2) {
+            echo "
+    
         
-        <!-- Card for Screen1 - VDD
+        
+        <!-- Card for Screen1 - VDD-->
         <div class='config card'>
             <h1>Settings</h1>
             <h2>Virtual Designated Driver</h2>
@@ -55,37 +64,17 @@
                 <input type='text' name='fullName' value='Tanay Vardhan'>
                 <input type='tel' name='phone' value='2173052056'>
             <center><br>
-                <div class='button'>Save</div>
+                <a href='/'><div class='button'>Save</div></a>
                 
                 <br><br>
-                <div class='circlePtr'></div>
-                <div class='circlePtr selected'></div>
-                <div class='circlePtr'></div>
+                <a href='/settings.php'><div class='circlePtr'></div></a>
+                <a href='/settings.php?sType=2'><div class='circlePtr selected'></div></a>
+
                         
             </center>
-        </div>
-        -->
-        
-        <!-- Card for Screen1 - Uber -->
-        <div class='config card'>
-            <h1>Settings</h1>
-            <h2>Connect to Uber</h2>
-            <hr>
-            <center>
-                <div class='icoHolder vdd'></div>
-            </center>
-                <input type='text' name='fullName' value='Tanay Vardhan'>
-                <input type='tel' name='phone' value='2173052056'>
-            <center><br>
-                <div class='button'>Save</div>
-                
-                <br><br>
-                <div class='circlePtr'></div>
-                <div class='circlePtr selected'></div>
-                <div class='circlePtr'></div>
-                        
-            </center>
-        </div>
+        </div>";
+        }
+        ?>
         
         
     </center>
@@ -98,8 +87,8 @@
         <center>
           <ul>
               <li><div class='icoHolder power'></div></li>
-              <li><div class='icoHolder home'></div></li>
-              <li><div class='icoHolder settings selected'></div></li>
+              <li><a href='/'><div class='icoHolder home'></div></a></li>
+              <li><a href='/settings.php'><div class='icoHolder settings selected'></div></a></li>
           </ul>
         </center>
     </div>
