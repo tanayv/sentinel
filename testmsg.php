@@ -10,10 +10,11 @@ $client = new Services_Twilio($sid, $token);
 $message = $client->account->messages->sendMessage(
   '8629022180', // From a valid Twilio number
   '6089603054', // Text this number
-  "This was easy!"
+  "Hello, please help Sentinel identify if XYZ is in a position to drive. Reply with YES or NO"
 );
 
-print $message->sid;
+
+//print $message->sid;
 
 
 

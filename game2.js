@@ -138,6 +138,7 @@
 	*/
 	
 	function ask() {
+	setTimeout(function(){ window.location = "/drunk.php"; }, 10000);
     var a = Math.floor(Math.random() * 100) + 1;
     var b = Math.floor(Math.random() * 100) + 1;
     var op = [ "+", "-"][Math.floor(Math.random()*2)];

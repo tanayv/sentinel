@@ -36,12 +36,13 @@
     <?php
     
     echo "
-    
+    <center>
     <div class='config card'>
         <p id='questLove'></p>
-        <input type='text' name='answer' id='answer'>
-        <div class='button' id='submit'>Submit</div>
+        <input type='text' name='answer' id='answer' placeholder='Answer'><br>
+        <center><div class='button' id='submit'>Submit</div></center>
     </div>
+    </center>
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src='game2.js'></script>";
     

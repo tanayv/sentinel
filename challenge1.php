@@ -12,6 +12,16 @@
         $status = $row["value"];
     }
     
+    $query1 = "SELECT * FROM global WHERE item = 'vdd_async'";
+    $result1 = $mysqli->query($query1);
+    $async = 'hulu1';
+    while ($row = $result1->fetch_array()) {
+        $async = $row["value"];
+    }
+    
+    if ($async == 'on') {
+        header("Location: async.php");
+    }
     
 
 

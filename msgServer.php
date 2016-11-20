@@ -9,7 +9,27 @@ $token = "0a35cb4d14d3ddad5ab9d408d7ba9baa"; // Your Auth Token from www.twilio.
 
 $client = new Services_Twilio($sid, $token);
 foreach ($client->account->messages as $message) {
-    echo "From: {$message->from}\nTo: {$message->to}\nBody: " . $message->body;
+    //echo "From: {$message->from}\nTo: {$message->to}\nBody: " . $message->body;
+    $storedBody = $message->body;
+    break;
+}
+
+if ($storedBody == 'YES') {
+    
+    $query2 = "UPDATE global SET value='off' WHERE item = 'vdd_async'";
+    $mysqli->query($query2);
+    header("Location: toggleSentinel.php");
+    
+}
+
+else if ($storedBody == 'NO') {
+    $query2 = "UPDATE global SET value='off' WHERE item = 'vdd_async'";
+    $mysqli->query($query2);
+    header("Location: uber://");
+}
+
+else {
+    echo "Waiting for Response";
 }
 
 ?>

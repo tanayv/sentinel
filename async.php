@@ -19,20 +19,11 @@
     }
     
     
-    $query1 = "SELECT * FROM global WHERE item = 'vdd_async'";
-    $result1 = $mysqli->query($query1);
-    $async = 'hulu1';
-    while ($row = $result1->fetch_array()) {
-        $async = $row["value"];
-    }
-    if ($async == 'on') {
-        //Send text message...
-        include 'testmsg.php';
-        header("Location: async.php");
-    }
+    //Hear for responses...
+    include 'msgServer.php';
     
     $page = $_SERVER['PHP_SELF'];
-    $sec = "10";
+    $sec = "5";
     
 ?>
 
@@ -40,7 +31,7 @@
 
 <html>
     <head>
-        <title>Sentinel | Drunk Person</title>
+        <title>Sentinel | Async</title>
         <link rel='stylesheet' href='assets/style.css'>
         <meta name="viewport" content="user-scalable=no" />
         <meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">
@@ -55,21 +46,20 @@
     <center>
     
     <?php 
-    $varTel = "+1-217-305-2056";
     echo "
     <!-- MDesign Card for Config -->
     
         <!-- Card for Screen1 - HeartBeat Sensor-->
         <div class='config card'>
-            <h1>Challenge Failed</h1>
+            <h1>Car Locked</h1>
             <h2>Sentinel has locked the car</h2>
             <hr>
             <center>
                 <div class='icoHolder carLock'></div>
             </center>
+            <p>We're waiting for your designated driver to make a decision on your suitability to drive your car. In the meantime, you can request an Uber. </p>
             <center>
                 <a href='uber://?action=setPickup'><div class='long button'>Uber</div></a><br>
-                <a href='/toggleVDDAsync.php'><div class='long button'>Consult VDD</div></a>
             </center>
         </div>
         </center>
