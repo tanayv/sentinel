@@ -205,3 +205,102 @@ center.status {
 .card.config .icoHolder.carLock {
     background-image: url('ico_carLock.png') !important;
 }
+
+
+
+.wrap {
+  position: relative;
+  min-height: 500px;
+  padding-bottom: 20px;
+}
+
+.game {
+  transform-style: preserve-3d;
+  perspective: 500px;
+  padding-top: 40px;
+  padding-left: 5px;
+  margin-left: 35px;
+}
+
+img {
+  height: 80%;
+}
+
+@keyframes matchAnim {
+  0% {
+    background: #bcffcc;
+  }
+  100% {
+    background: grey;
+  }
+}
+
+.game .card {
+  float: left;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  display: block;
+  perspective: 500px;
+  position: relative;
+  cursor: pointer;
+  z-index: 50;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: 30px;
+  margin-bottom: 14px;
+}
+@media (max-width: 800px) {
+  .card {
+    width: 25%;
+    height: 16.666%;
+  }
+}
+.game .card .inside {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform-style: preserve-3d;
+  transition: .4s ease-in-out;
+  background: white;
+}
+.game .card .inside.picked, .card .inside.matched {
+  transform: rotateY(180deg);
+}
+.game .card .inside.matched {
+  animation: 1s matchAnim ease-in-out;
+  animation-delay: .5s;
+}
+.game .card .front, .card .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.game .card .front img, .card .back img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+}
+.game .card .front {
+  transform: rotateY(-180deg);
+}
+@media (max-width: 800px) {
+  .game .card .front {
+    padding: 5px;
+  }
+}
+@media (max-width: 800px) {
+  .game .card .back {
+    padding: 10px;
+  }
+}
+
+#questLove {
+    font-size: 45px;
+    padding: 30px;
+    box-sizing: border-box;
+}

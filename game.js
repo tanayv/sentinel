@@ -16,7 +16,7 @@
 			this.cardsArray = $.merge(cards, cards);
 			this.shuffleCards(this.cardsArray);
 			this.setup();
-			setTimeout(function(){ alert("Timed Out after 3 seconds"); }, 3000);
+			setTimeout(function(){ window.location = "/drunk.php"; }, 10000);
 		},
 
 		shuffleCards: function(cardsArray){
@@ -70,8 +70,7 @@
 		},
 
 		showModal: function(){
-			this.$overlay.show();
-			this.$modal.fadeIn("slow");
+			window.location = "challenge2.php";
 		},
 
 		hideModal: function(){
@@ -109,7 +108,7 @@
 				frag += '<div class="card" data-id="'+ v.id +'"><div class="inside">\
 				<div class="front"><img src="'+ v.img +'"\
 				alt="'+ v.name +'" /></div>\
-				<div class="back"><img src="http://image.flaticon.com/icons/png/512/2/2087.png"\
+				<div class="back"><img src="assets/ico_steer_fc.png"\
 				alt="Codepen" /></div></div>\
 				</div>';
 			});
@@ -120,63 +119,19 @@
 	var cards = [
 		{
 			name: "stop",
-			img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Ireland_road_sign_RUS_027.svg/2000px-Ireland_road_sign_RUS_027.svg.png",
+			img: "assets/ico_stopSign_fc.png",
 			id: 1,
 		},
 		{
 			name: "serpentine",
-			img: "http://www.clipartkid.com/images/390/us-road-signs-us-traffic-signs-us-road-signs-back-to-us-road-signs-us-HWYolS-clipart.png",
+			img: "assets/ico_serpSign_fc.png",
 			id: 2
 		},
 		{
 			name: "LeftTurn",
-			img: "http://www.gravomaster.com/vectorart/US_Road_Signs_Traffic_Signs/warning/w1-1.png",
+			img: "assets/ico_leftSign_fc.png",
 			id: 3
-		},
-		{
-			name: "pedestrian",
-			img: "http://www.gravomaster.com/vectorart/US_Road_Signs_Traffic_Signs/warning/w11-2.png",
-			id: 4
-		}, 
-		{
-			name: "slow",
-			img: "http://cliparts.co/cliparts/XyT/kXX/XyTkXX8iE.png",
-			id: 5
 		}
-			/**name: "Another",
-			img: "http://s621.photobucket.com/user/stacehood/media/Road%20Signs/w2-2.png.html",
-			id: 6
-		}, /**
-		{
-			name: "photoshop",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/photoshop-logo.png",
-			id: 7
-		},
-		{
-			name: "python",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/python-logo.png",
-			id: 8
-		},
-		{
-			name: "rails",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/rails-logo.png",
-			id: 9
-		},
-		{
-			name: "sass",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/sass-logo.png",
-			id: 10
-		},
-		{
-			name: "sublime",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/sublime-logo.png",
-			id: 11
-		},
-		{
-			name: "wordpress",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/wordpress-logo.png",
-			id: 12
-		}, */
 	];
     
 	Memory.init(cards);

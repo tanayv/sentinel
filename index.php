@@ -55,18 +55,34 @@
     <center class='status'>INACTIVE</center>";
     }
     
-    ?>
-    
-    <!-- Footer Nav -->
+    //Check if status is active or inactive: 
+    if ($status == 'active') {
+    echo "<!-- Footer Nav -->
     <div class='navbar'>
         <center>
           <ul>
-              <li><a href='/drunk.php'><div class='icoHolder power'></div></a></li>
+              <li><a href='/challenge1.php'><div class='icoHolder power'></div></a></li>
               <li><a href='/'><div class='icoHolder home selected'></div></a></li>
               <li><a href='/settings.php'><div class='icoHolder settings'></div></a></li>
           </ul>
         </center>
-    </div>
+    </div>";
+    }
+    
+    else {
+    echo "<!-- Footer Nav -->
+    <div class='navbar'>
+        <center>
+          <ul>
+              <li><a href='/toggleSentinel.php'><div class='icoHolder power'></div></a></li>
+              <li><a href='/'><div class='icoHolder home selected'></div></a></li>
+              <li><a href='/settings.php'><div class='icoHolder settings'></div></a></li>
+          </ul>
+        </center>
+    </div>";
+    }
+    ?>
+    
     
     </body>
 </html>

@@ -4,6 +4,14 @@
     
     $settingType = $_GET['sType'];
     
+    include 'db.php';
+    $query1 = "SELECT * FROM global WHERE item = 'status'";
+    $result1 = $mysqli->query($query1);
+    $status = 'hulu1';
+    while ($row = $result1->fetch_array()) {
+        $status = $row["value"];
+    }
+    
 ?>
 
 <!DOCTYPE HTML> 
@@ -82,16 +90,35 @@
     
     
     
-    <!-- Footer Nav -->
+    <?php
+    
+    //Check if status is active or inactive: 
+    if ($status == 'active') {
+    echo "<!-- Footer Nav -->
     <div class='navbar'>
         <center>
           <ul>
-              <li><div class='icoHolder power'></div></li>
+              <li><a href='/challenge1.php'><div class='icoHolder power'></div></a></li>
               <li><a href='/'><div class='icoHolder home'></div></a></li>
               <li><a href='/settings.php'><div class='icoHolder settings selected'></div></a></li>
           </ul>
         </center>
-    </div>
+    </div>";
+    }
+    
+    else {
+    echo "<!-- Footer Nav -->
+    <div class='navbar'>
+        <center>
+          <ul>
+              <li><a href='/toggleSentinel.php'><div class='icoHolder power'></div></a></li>
+              <li><a href='/'><div class='icoHolder home'></div></a></li>
+              <li><a href='/settings.php'><div class='icoHolder settings selected'></div></a></li>
+          </ul>
+        </center>
+    </div>";
+    }
+    ?>
     
     </body>
 </html>

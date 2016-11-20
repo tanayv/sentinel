@@ -8,8 +8,9 @@
         $status = $row["value"];
     }
     
-    if ($status == 'active')
+    if ($status == 'active') {
         $query2 = "UPDATE global SET value='inactive' WHERE item = 'status'";
+    }
     
     else
         $query2 = "UPDATE global SET value='active' WHERE item = 'status'";
