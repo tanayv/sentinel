@@ -1,6 +1,6 @@
 #Sentinel
 
-A mobile application to prevent drunk driving, built at WildHacks 2016, by [@shivanikohhlii](https://github.com/shivanikohlii) and [@tanayv](http://github.com/tanayv).
+A mobile application to prevent drunk driving, built at WildHacks 2016, by [@shivanikohlii](https://github.com/shivanikohlii) and [@tanayv](http://github.com/tanayv).
 
 <img src="/assets/screen3.png" width="200">
 <img src="/assets/screen1.png" width="200">
